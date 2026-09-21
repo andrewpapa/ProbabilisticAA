@@ -1,8 +1,6 @@
 # Probabilistic Archetypal Analysis
 
-# Implementation of Bernoulli PAA
-
-Python implementation of Bernoulli probabilistic Archetypal analysis, presented in 
+Python implementation of Probabilistic Archetypal Analysis, presented in 
 
 > Seth, S., Eugster, M.J.A. *Probabilistic archetypal analysis*.  
 > Mach Learn 102, 85–113 (2016).  
@@ -15,8 +13,8 @@ Implementation translated from Matlab code found here: https://github.com/aalab/
 Clone the repository:
 
 ```bash
-git clone https://github.com/andrewpapa/ProbAA.git
-cd ProbAA
+git clone https://github.com/andrewpapa/ProbabilisticAA.git
+cd ProbabilisticAA
 ```
 
 Install using `pip`:
