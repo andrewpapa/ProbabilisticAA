@@ -50,10 +50,10 @@ class NormalAA():
         Initialise matrices
         """
         W = np.random.uniform(size=(self.nsamples,self.n_archetypes))
-        W = normalize(W,norm='l1',axis=1)
+        W = normalize(W,norm='l1',axis=0)
 
         H = np.random.uniform(size=(self.n_archetypes,self.nsamples))
-        H = normalize(H,norm='l1',axis=1)
+        H = normalize(H,norm='l1',axis=0)
 
         return W, H
 

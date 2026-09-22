@@ -51,10 +51,10 @@ class MultinomialAA():
         Initialise matrices
         """
         W = np.random.uniform(size=(self.nsamples,self.n_archetypes))
-        W = normalize(W,norm='l1',axis=1)
+        W = normalize(W,norm='l1',axis=0)
 
         H = np.random.uniform(size=(self.n_archetypes,self.nsamples))
-        H = normalize(H,norm='l1',axis=1)
+        H = normalize(H,norm='l1',axis=0)
 
         return W, H
 
@@ -91,8 +91,10 @@ class MultinomialAA():
             HNew = (eps + W.T @ Xmat.T @ temp) * H
 
             # -- maximisation
-            W = WNew / np.sum(WNew, axis=0, keepdims=True)
-            H = HNew / np.sum(HNew, axis=0, keepdims=True)
+            W = normalize(W, norm='l1', axis=0)
+            H = normalize(H, norm='l1', axis=0)
+            # W = WNew / np.sum(WNew, axis=0, keepdims=True)
+            # H = HNew / np.sum(HNew, axis=0, keepdims=True)
 
             # -- compute cost
             cost_array[iter+1] = self.compute_multinomial_cost( Xmat @ W, H, Xcounts, eps)
