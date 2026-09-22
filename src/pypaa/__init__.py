@@ -1,4 +1,5 @@
 from .paa_poisson import PoissonAA
 from .paa_multinomial import MultinomialAA
+from .paa_normal import NormalAA
 
-__all__ = ["PoissonAA"]
+__all__ = ["PoissonAA", "MultinomialAA", "NormalAA"]
