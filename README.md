@@ -21,3 +21,6 @@ Install using `pip`:
 ```python
 pip install -e .
 ```
+
+An example `jupyter-notebook` containing the application of the different PAA approaches
+to simulated data can be found in the `examples/` directory.
