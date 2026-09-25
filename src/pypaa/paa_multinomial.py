@@ -39,6 +39,7 @@ class MultinomialAA():
         W, H, cost_array = self.optimise_nll(Xmat, Xcounts, Winit, Hinit, eps)
         
         A = Xmat @ W
+        # A = X.astype(float) @ W
     
         self.bool_is_fitted_ = True
         self.A = A
@@ -91,8 +92,8 @@ class MultinomialAA():
             HNew = (eps + W.T @ Xmat.T @ temp) * H
 
             # -- maximisation
-            W = normalize(W, norm='l1', axis=0)
-            H = normalize(H, norm='l1', axis=0)
+            W = normalize(WNew, norm='l1', axis=0)
+            H = normalize(HNew, norm='l1', axis=0)
             # W = WNew / np.sum(WNew, axis=0, keepdims=True)
             # H = HNew / np.sum(HNew, axis=0, keepdims=True)
 

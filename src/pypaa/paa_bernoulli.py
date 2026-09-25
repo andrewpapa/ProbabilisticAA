@@ -38,17 +38,17 @@ class BernoulliAA():
         W, H, cost_array = self.optimise_nll(Xmat, Xmat_1m, Winit, Hinit)
 
         # -- final normalised W, H
-        Wnorm = normalize(W, norm='l1', axis=0)
-        Hnorm = normalize(H, norm='l1', axis=0)
+        #Wnorm = normalize(W, norm='l1', axis=0)
+        #Hnorm = normalize(H, norm='l1', axis=0)
         
-        # A = Xmat @ W
-        A = Xmat @ Wnorm
+        A = Xmat @ W
+        #A = Xmat @ Wnorm
     
         self.bool_is_fitted_ = True
         self.A = A
 
-        # return W, H, A, cost_array
-        return Wnorm, Hnorm, A, cost_array
+        return W, H, A, cost_array
+        # return Wnorm, Hnorm, A, cost_array
 
 
     def initialise_matrices(self):
@@ -118,4 +118,4 @@ class BernoulliAA():
 
             cost_array[iter+1] = self.compute_bernoulli_cost(Xmat @ Wnorm, Hnorm, Xmat)
 
-        return W, H, cost_array
+        return Wnorm, Hnorm, cost_array

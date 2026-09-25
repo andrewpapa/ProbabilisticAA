@@ -37,7 +37,8 @@ class NormalAA():
         # -- fit the model
         W, H, cost_array = self.optimise_ll(Xmat,Winit,Hinit,penalty)
         
-        A = Xmat @ W
+        # A = Xmat @ W
+        A = X.astype(float) @ W
     
         self.bool_is_fitted_ = True
         self.A = A
